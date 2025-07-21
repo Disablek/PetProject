@@ -1,0 +1,78 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|e:\\study\\cscode\\study\\src\\taskflow\\pet-project\\features\\tasks\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\features\\tasks\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|e:\\study\\cscode\\study\\src\\taskflow\\pet-project\\features\\tasks\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\features\\tasks\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|e:\\study\\cscode\\study\\src\\taskflow\\pet-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Features\\Tasks\\TaskService.cs",
+              "RelativeDocumentMoniker": "Pet-project\\Features\\Tasks\\TaskService.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Features\\Tasks\\TaskService.cs",
+              "RelativeToolTip": "Pet-project\\Features\\Tasks\\TaskService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T18:21:52.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Features\\Tasks\\TaskItem.cs",
+              "RelativeDocumentMoniker": "Pet-project\\Features\\Tasks\\TaskItem.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Features\\Tasks\\TaskItem.cs",
+              "RelativeToolTip": "Pet-project\\Features\\Tasks\\TaskItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T18:06:16.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Program.cs",
+              "RelativeDocumentMoniker": "Pet-project\\Program.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Program.cs",
+              "RelativeToolTip": "Pet-project\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T16:03:29.112Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
