@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|e:\\study\\cscode\\study\\src\\taskflow\\pet-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|e:\\study\\cscode\\study\\src\\taskflow\\pet-project\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +15,28 @@
       "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|e:\\study\\cscode\\study\\src\\taskflow\\pet-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\Pet-project.csproj|solutionrelative:pet-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|e:\\study\\cscode\\study\\src\\taskflow\\taskservice.api\\features\\tasks\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|solutionrelative:taskservice.api\\features\\tasks\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|e:\\study\\cscode\\study\\src\\taskflow\\taskservice.api\\features\\middleware\\requestloggingmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|solutionrelative:taskservice.api\\features\\middleware\\requestloggingmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|e:\\study\\cscode\\study\\src\\taskflow\\taskservice.api\\features\\middleware\\requestloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|solutionrelative:taskservice.api\\features\\middleware\\requestloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|e:\\study\\cscode\\study\\src\\taskflow\\taskservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|solutionrelative:taskservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|e:\\study\\cscode\\study\\src\\taskflow\\taskservice.api\\features\\tasks\\endpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|solutionrelative:taskservice.api\\features\\tasks\\endpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|e:\\study\\cscode\\study\\src\\taskflow\\taskservice.api\\features\\tasks\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1842260-314C-41BD-A0AB-9C6BA974913B}|TaskService.Api\\TaskService.Api.csproj|solutionrelative:taskservice.api\\features\\tasks\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,39 +58,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaskService.cs",
-              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\TaskService.cs",
-              "RelativeDocumentMoniker": "Pet-project\\TaskService.cs",
-              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\TaskService.cs",
-              "RelativeToolTip": "Pet-project\\TaskService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBQAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RequestLoggingMiddlewareExtensions.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Middleware\\RequestLoggingMiddlewareExtensions.cs",
+              "RelativeDocumentMoniker": "TaskService.Api\\Features\\Middleware\\RequestLoggingMiddlewareExtensions.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Middleware\\RequestLoggingMiddlewareExtensions.cs",
+              "RelativeToolTip": "TaskService.Api\\Features\\Middleware\\RequestLoggingMiddlewareExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T18:21:52.549Z",
+              "WhenOpened": "2025-07-21T19:53:29.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "RequestLoggingMiddleware.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Middleware\\RequestLoggingMiddleware.cs",
+              "RelativeDocumentMoniker": "TaskService.Api\\Features\\Middleware\\RequestLoggingMiddleware.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Middleware\\RequestLoggingMiddleware.cs",
+              "RelativeToolTip": "TaskService.Api\\Features\\Middleware\\RequestLoggingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T19:51:49.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Program.cs",
+              "RelativeDocumentMoniker": "TaskService.Api\\Program.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Program.cs",
+              "RelativeToolTip": "TaskService.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T19:28:43.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Endpoints.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Tasks\\Endpoints.cs",
+              "RelativeDocumentMoniker": "TaskService.Api\\Features\\Tasks\\Endpoints.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Tasks\\Endpoints.cs",
+              "RelativeToolTip": "TaskService.Api\\Features\\Tasks\\Endpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T19:28:01.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskRepository.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Tasks\\TaskRepository.cs",
+              "RelativeDocumentMoniker": "TaskService.Api\\Features\\Tasks\\TaskRepository.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Tasks\\TaskRepository.cs",
+              "RelativeToolTip": "TaskService.Api\\Features\\Tasks\\TaskRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T19:18:20.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Tasks\\TaskItem.cs",
+              "RelativeDocumentMoniker": "TaskService.Api\\Features\\Tasks\\TaskItem.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\Features\\Tasks\\TaskItem.cs",
+              "RelativeToolTip": "TaskService.Api\\Features\\Tasks\\TaskItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T19:02:15.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TaskItem.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\TaskItem.cs",
               "RelativeDocumentMoniker": "Pet-project\\TaskItem.cs",
               "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\TaskItem.cs",
               "RelativeToolTip": "Pet-project\\TaskItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-19T18:06:16.962Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\TaskService.cs",
+              "RelativeDocumentMoniker": "Pet-project\\TaskService.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\TaskService.cs",
+              "RelativeToolTip": "Pet-project\\TaskService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-19T18:21:52.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Program.cs",
               "RelativeDocumentMoniker": "Pet-project\\Program.cs",
               "ToolTip": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Program.cs",
               "RelativeToolTip": "Pet-project\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-19T16:03:29.112Z",
               "EditorCaption": ""
