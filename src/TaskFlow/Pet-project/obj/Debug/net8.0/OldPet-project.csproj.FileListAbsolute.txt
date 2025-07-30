@@ -1,0 +1,15 @@
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\bin\Debug\net8.0\OldPet-project.exe
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\bin\Debug\net8.0\OldPet-project.deps.json
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\bin\Debug\net8.0\OldPet-project.runtimeconfig.json
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\bin\Debug\net8.0\OldPet-project.dll
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\bin\Debug\net8.0\OldPet-project.pdb
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.AssemblyInfoInputs.cache
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.AssemblyInfo.cs
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.csproj.CoreCompileInputs.cache
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.sourcelink.json
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.dll
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\refint\OldPet-project.dll
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.pdb
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\OldPet-project.genruntimeconfig.cache
+E:\Study\CSCode\Study\src\TaskFlow\Pet-project\obj\Debug\net8.0\ref\OldPet-project.dll

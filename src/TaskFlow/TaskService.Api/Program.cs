@@ -3,7 +3,7 @@ using TaskService.Api.Features.Tasks;
 var builder = WebApplication.CreateBuilder(args);
 
 // DI
-builder.Services.AddSingleton<TaskRepository>();
+builder.Services.AddScoped<ITaskRepository, InMemoryTaskRepository>();
 
 builder.Services.AddLogging();
 

@@ -1,6 +1,6 @@
 ﻿namespace TaskService.Api.Features.Tasks
 {
-    public class TaskRepository
+    public class InMemoryTaskRepository : ITaskRepository
     {
         private readonly List<TaskItem> _tasks = new();
 

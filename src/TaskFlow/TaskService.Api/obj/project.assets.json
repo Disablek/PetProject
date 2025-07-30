@@ -200,9 +200,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\TaskService.Api.csproj",
-      "projectName": "TaskService.Api",
-      "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\TaskService.Api.csproj",
+      "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\OldTaskService.Api.csproj",
+      "projectName": "OldTaskService.Api",
+      "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\OldTaskService.Api.csproj",
       "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
       "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\obj\\",
       "projectStyle": "PackageReference",

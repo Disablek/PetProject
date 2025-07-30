@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Pet-project.csproj",
-      "projectName": "Pet-project",
-      "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\Pet-project.csproj",
+      "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\OldPet-project.csproj",
+      "projectName": "OldPet-project",
+      "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\OldPet-project.csproj",
       "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
       "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Pet-project\\obj\\",
       "projectStyle": "PackageReference",

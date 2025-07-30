@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X2TaTp52cJE=",
+  "dgSpecHash": "FnM9tcucVOM=",
   "success": true,
-  "projectFilePath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\TaskService.Api.csproj",
+  "projectFilePath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\TaskService.Api\\OldTaskService.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\disable\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.16\\microsoft.dotnet.ilcompiler.8.0.16.nupkg.sha512",
     "C:\\Users\\disable\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.16\\microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
