@@ -1,8 +1,9 @@
 ﻿using TaskFlow.Data.Entities.Enums;
+using TaskFlow.Data.Entities.Interfaces;
 
 namespace TaskFlow.Data.Entities
 {
-    public class TaskEntity
+    public class TaskEntity : IAuditable, ISoftDeletable
     {
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
@@ -22,8 +23,8 @@ namespace TaskFlow.Data.Entities
         public Guid AssigneeId { get; set; } // Исполнитель
         public UserEntity? Assignee { get; set; }
 
-        public DateTime CreatedAt { get; private set; }
+        public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; private set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace TaskFlow.Data.Entities
+﻿using TaskFlow.Data.Entities.Interfaces;
+
+namespace TaskFlow.Data.Entities
 {
-    public class ProjectEntity
+    public class ProjectEntity : IAuditable, ISoftDeletable
     {
         public Guid Id { get; set; }
 
@@ -11,6 +13,10 @@
         public List<UserEntity> Users { get; set; } = [];
 
         public Guid AdminId { get; set; }
-        public UserEntity? Admin { get; set; } 
+        public UserEntity? Admin { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }
