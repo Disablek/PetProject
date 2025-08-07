@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("OldPet-project")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TaskFlow.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09356c6861e1adfddc3821ff71ecf97fb9dde103")]
-[assembly: System.Reflection.AssemblyProductAttribute("OldPet-project")]
-[assembly: System.Reflection.AssemblyTitleAttribute("OldPet-project")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1dbca9c5852e6ac918c13d4682114fb44ff70801")]
+[assembly: System.Reflection.AssemblyProductAttribute("TaskFlow.Business")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TaskFlow.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

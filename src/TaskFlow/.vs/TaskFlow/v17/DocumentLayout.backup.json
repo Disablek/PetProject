@@ -1,6 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\",
+<<<<<<< Updated upstream
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{4147742E-6A4D-4B50-AE73-6FE4F85AC6C6}|API\\API.csproj|e:\\study\\cscode\\study\\src\\taskflow\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -115,6 +116,9 @@
       "RelativeMoniker": "D:0:0:{5FCFBD15-4D66-45AD-A7EB-1508E6397FB6}|Pet-project\\OldPet-project.csproj|solutionrelative:pet-project\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "Documents": [],
+>>>>>>> Stashed changes
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -122,7 +126,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 7,
+=======
+          "SelectedChildIndex": -1,
+>>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Document",
@@ -198,6 +206,7 @@
               "EditorCaption": ""
             },
             {
+<<<<<<< Updated upstream
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
@@ -480,6 +489,10 @@
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-19T18:21:52.549Z"
+=======
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+>>>>>>> Stashed changes
             }
           ]
         }

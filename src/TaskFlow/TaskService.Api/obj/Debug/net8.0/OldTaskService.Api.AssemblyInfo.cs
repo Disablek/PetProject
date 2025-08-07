@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OldTaskService.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09356c6861e1adfddc3821ff71ecf97fb9dde103")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2059a605a9bf0a081bce6bc7e9b6ceb9b8f02024")]
 [assembly: System.Reflection.AssemblyProductAttribute("OldTaskService.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OldTaskService.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
