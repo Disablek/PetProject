@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\API\\API.csproj": {}
+    "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\API\\API.csproj": {}
   },
   "projects": {
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\API\\API.csproj": {
+    "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\API\\API.csproj",
+        "projectUniqueName": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\API\\API.csproj",
+        "projectPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\API\\API.csproj",
         "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\API\\obj\\",
+        "outputPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Main\\Programs\\VSComSDK\\NuGetPackages"
@@ -32,11 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj": {
-                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj"
-              },
-              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\Infrastructure.csproj"
+              "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\TaskFlow.Business.csproj": {
+                "projectPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\TaskFlow.Business.csproj"
               }
             }
           }
@@ -57,9 +54,23 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.22.1, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -89,14 +100,14 @@
         }
       }
     },
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj": {
+    "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\TaskFlow.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj",
+        "projectUniqueName": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\TaskFlow.Business.csproj",
+        "projectName": "TaskFlow.Business",
+        "projectPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\TaskFlow.Business.csproj",
         "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\obj\\",
+        "outputPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Main\\Programs\\VSComSDK\\NuGetPackages"
@@ -117,8 +128,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj"
+              "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\TaskFlow.Data.csproj": {
+                "projectPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\TaskFlow.Data.csproj"
               }
             }
           }
@@ -138,6 +149,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -158,14 +185,14 @@
         }
       }
     },
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj": {
+    "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\TaskFlow.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj",
-        "projectName": "Domain",
-        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\TaskFlow.Data.csproj",
+        "projectName": "TaskFlow.Data",
+        "projectPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\TaskFlow.Data.csproj",
         "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\obj\\",
+        "outputPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Main\\Programs\\VSComSDK\\NuGetPackages"
@@ -203,78 +230,26 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\Infrastructure.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Main\\Programs\\VSComSDK\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\disable\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj": {
-                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj"
-              },
-              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",

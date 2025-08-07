@@ -4,12 +4,12 @@
     "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj": {
+    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Business Logic Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj",
+        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Business Logic Layer.csproj",
+        "projectName": "Business Logic Layer",
+        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Business Logic Layer.csproj",
         "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
         "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\obj\\",
         "projectStyle": "PackageReference",
@@ -166,8 +166,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj": {
-                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Application.csproj"
+              "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Business Logic Layer.csproj": {
+                "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Application\\Business Logic Layer.csproj"
               },
               "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj": {
                 "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj"

@@ -1,30 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Entities;
+﻿using TaskFlow.Data.Entities.Enums;
 
-namespace Application.DTO
+namespace TaskFlow.Business.DTO
 {
-    // DTO для списка задач (Меньше полей > производительность)
     public class TaskItemListDto
     {
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
-        public bool IsCompleted { get; set; }
-        public DateTime? DueDate { get; set; }
-        public string Status { get; set; } = "Pending";
+        public Status Status { get; set; }
+        public Priority Priority { get; set; }
+        public DateTime? DueTime { get; set; }
+        public DateTime CreatedAt { get; set; }
 
-        public static TaskItemListDto FromEntity(TaskItem entity)
+        // Связи
+        public Guid ProjectId { get; set; }
+        public string ProjectName { get; set; } = string.Empty;
+        public Guid CreatorId { get; set; }
+        public string CreatorName { get; set; } = string.Empty;
+        public Guid AssigneeId { get; set; }
+        public string AssigneeName { get; set; } = string.Empty;
+
+        // Вычисляемые свойства
+        public bool IsCompleted => Status == Status.Done;
+        public bool IsOverdue => DueTime.HasValue && DueTime < DateTime.UtcNow && Status != Status.Done;
+
+        public static TaskItemListDto FromEntity(TaskFlow.Business.Entities.TaskItem entity)
         {
             return new TaskItemListDto
             {
                 Id = entity.Id,
                 Title = entity.Title,
-                IsCompleted = entity.IsCompleted,
-                DueDate = entity.DueDate,
-                Status = entity.Status
+                Status = entity.Status,
+                Priority = entity.Priority,
+                DueTime = entity.DueTime,
+                CreatedAt = entity.CreatedAt,
+                ProjectId = entity.ProjectId,
+                CreatorId = entity.CreatorId,
+                AssigneeId = entity.AssigneeId
+            };
+        }
+
+        public static TaskItemListDto FromInfrastructureEntity(TaskFlow.Data.Entities.TaskEntity entity)
+        {
+            return new TaskItemListDto
+            {
+                Id = entity.Id,
+                Title = entity.Title,
+                Status = entity.Status,
+                Priority = entity.Priority,
+                DueTime = entity.DueTime,
+                CreatedAt = entity.CreatedAt,
+                ProjectId = entity.ProjectId,
+                ProjectName = entity.Project?.Name ?? string.Empty,
+                CreatorId = entity.CreatorId,
+                CreatorName = entity.Creator?.UserName ?? string.Empty,
+                AssigneeId = entity.AssigneeId,
+                AssigneeName = entity.Assignee?.UserName ?? string.Empty
             };
         }
     }

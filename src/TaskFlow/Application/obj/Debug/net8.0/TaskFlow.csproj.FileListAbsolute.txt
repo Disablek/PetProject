@@ -1,0 +1,6 @@
+E:\Study\CSCode\Study\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.csproj.AssemblyReference.cache
+E:\Study\CSCode\Study\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\CSCode\Study\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.AssemblyInfoInputs.cache
+E:\Study\CSCode\Study\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.AssemblyInfo.cs
+E:\Study\CSCode\Study\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.csproj.CoreCompileInputs.cache
+E:\Study\CSCode\Study\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.sourcelink.json

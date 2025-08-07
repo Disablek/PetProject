@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TaskFlow.Data.Entities.Enums;
 
-namespace Application.DTO
+namespace TaskFlow.Business.DTO
 {
     public class UpdateTaskItemDto
     {
         public string Title { get; set; } = string.Empty;
-        public string? Description { get; set; }
-        public DateTime? DueDate { get; set; }
-        public bool IsCompleted { get; set; }
-        public string Status { get; set; } = "Pending";
+        public string Description { get; set; } = string.Empty;
+        public Status Status { get; set; }
+        public Priority Priority { get; set; }
+        public DateTime? DueTime { get; set; }
+        
+        // Связи
+        public Guid AssigneeId { get; set; }
     }
 }

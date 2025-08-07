@@ -1,0 +1,15 @@
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Data.deps.json
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Data.dll
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Data.pdb
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.csproj.AssemblyReference.cache
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.AssemblyInfoInputs.cache
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.AssemblyInfo.cs
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.csproj.CoreCompileInputs.cache
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.sourcelink.json
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.dll
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\refint\TaskFlow.Data.dll
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.pdb
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\ref\TaskFlow.Data.dll
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Data.runtimeconfig.json
+E:\Study\CSCode\Study\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.genruntimeconfig.cache

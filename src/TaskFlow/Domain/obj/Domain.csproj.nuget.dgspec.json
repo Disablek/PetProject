@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj": {}
+    "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj": {
+    "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\Domain.csproj",
+        "projectPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\disable\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\CSCode\\Study\\src\\TaskFlow\\Domain\\obj\\",
+        "outputPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Main\\Programs\\VSComSDK\\NuGetPackages"

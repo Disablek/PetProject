@@ -1,9 +1,18 @@
-using Application.Interfaces;
-using Application.Services;
-using Infrastructure.Repositories;
 using API.Middleware;
+using Microsoft.EntityFrameworkCore;
+using TaskFlow.Business.Interfaces;
+using TaskFlow.Business.Repositories;
+using TaskFlow.Business.Services;
+using TaskFlow.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
+
+builder.Services.AddDbContext<TaskFlowDbContext>(options =>
+{
+    options.UseNpgsql(configuration.GetConnectionString(nameof(TaskFlowDbContext))); 
+});
 
 // Add services to the container.
 
@@ -11,6 +20,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 // DI
 builder.Services.AddScoped<ITaskRepository, InMemoryTaskRepository>();
