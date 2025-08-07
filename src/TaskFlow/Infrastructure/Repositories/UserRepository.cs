@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaskFlow.Data.Entities;
+using TaskFlow.Data.Repositories.Interfaces;
 
 namespace TaskFlow.Data.Repositories;
-public class UserRepository
+public class UserRepository : IUserRepository
 {
     private readonly TaskFlowDbContext _dbContext;
     public UserRepository(TaskFlowDbContext dbContext)

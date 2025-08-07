@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
 using TaskFlow.Data.Entities;
 using TaskFlow.Data.Entities.Enums;
+using TaskFlow.Data.Repositories.Interfaces;
+
 namespace TaskFlow.Data.Repositories;
 
-public class TasksRepository
+public class TasksRepository : ITasksRepository
 {
     private readonly TaskFlowDbContext _dbContext;
     public TasksRepository(TaskFlowDbContext dbContext)
