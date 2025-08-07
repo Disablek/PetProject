@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using TaskFlow.Data.Configurations;
 using TaskFlow.Data.Entities;
 using TaskFlow.Data.Entities.Interfaces;
@@ -14,6 +15,19 @@ public class TaskFlowDbContext(DbContextOptions<TaskFlowDbContext> options)
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            if (typeof(ISoftDeletable).IsAssignableFrom(entityType.ClrType))
+            {
+                var parameter = Expression.Parameter(entityType.ClrType, "e");
+                var property = Expression.Property(parameter, nameof(ISoftDeletable.DeletedAt));
+                var condition = Expression.Equal(property, Expression.Constant(null));
+                var lambda = Expression.Lambda(condition, parameter);
+
+                entityType.SetQueryFilter(lambda);
+            }
+        }
+
         modelBuilder.ApplyConfiguration(new ProjectConfiguration());
         modelBuilder.ApplyConfiguration(new TaskConfiguration());
         modelBuilder.ApplyConfiguration(new UserConfiguration());

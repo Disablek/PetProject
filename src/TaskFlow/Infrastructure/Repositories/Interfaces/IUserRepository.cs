@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TaskFlow.Data.Entities;
 
 namespace TaskFlow.Data.Repositories.Interfaces;
-internal interface IUserRepository
+
+public interface IUserRepository
 {
+    Task<List<UserEntity>> Get();
+    Task<UserEntity?> GetById(Guid id);
+    Task<List<UserEntity>> GetWithProjects();
+    Task Add(Guid id, string userName, string passwordHash);
+    Task UpdateUserName(Guid id, string userName);
+    Task Delete(Guid id);
 }

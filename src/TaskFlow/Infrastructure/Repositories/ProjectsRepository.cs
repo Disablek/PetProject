@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaskFlow.Data.Entities;
+using TaskFlow.Data.Repositories.Interfaces;
 
 namespace TaskFlow.Data.Repositories;
 
-public class ProjectsRepository
+public class ProjectsRepository : IProjectsRepository
 {
     private readonly TaskFlowDbContext _dbContext;
     public ProjectsRepository(TaskFlowDbContext dbContext)
@@ -57,9 +58,13 @@ public class ProjectsRepository
     }
     public async Task Delete(Guid id)
     {
-        await _dbContext.Projects
-            .Where(p => p.Id == id)
-            .ExecuteDeleteAsync();
+        var project = await _dbContext.Projects.FirstOrDefaultAsync(p => p.Id == id);
+        if (project is not null)
+        {
+            _dbContext.Projects.Remove(project); 
+            await _dbContext.SaveChangesAsync(); 
+        }
+
     }
 
 

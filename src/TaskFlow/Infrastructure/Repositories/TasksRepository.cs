@@ -55,9 +55,12 @@ public class TasksRepository : ITasksRepository
 
     public async Task Delete(Guid id)
     {
-        await _dbContext.Tasks
-            .Where(p => p.Id == id)
-            .ExecuteDeleteAsync();
+        var task = await _dbContext.Tasks.FirstOrDefaultAsync(p => p.Id == id);
+        if (task is not null)
+        {
+            _dbContext.Tasks.Remove(task);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 
 }
