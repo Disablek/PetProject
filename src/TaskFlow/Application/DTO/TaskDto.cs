@@ -13,5 +13,5 @@ public class TaskDto
 
     public Guid ProjectId { get; set; }
     public Guid? AssigneeId { get; set; }
-    public Guid? CreatorId { get; set; }
+    public Guid CreatorId { get; set; }
 }

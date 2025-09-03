@@ -20,7 +20,7 @@ namespace TaskFlow.Data.Entities
         public Guid CreatorId { get; set; }
         public UserEntity? Creator { get; set; }
 
-        public Guid AssigneeId { get; set; } // Исполнитель
+        public Guid? AssigneeId { get; set; } // Исполнитель
         public UserEntity? Assignee { get; set; }
     }
 }
