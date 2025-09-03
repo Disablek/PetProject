@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TaskFlow.Domain": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

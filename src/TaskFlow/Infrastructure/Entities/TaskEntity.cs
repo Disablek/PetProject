@@ -1,9 +1,9 @@
-﻿using TaskFlow.Data.Entities.Enums;
-using TaskFlow.Data.Entities.Interfaces;
+﻿using TaskFlow.Domain.Entities.Enums;
+using TaskFlow.Domain.Entities.Interfaces;
 
 namespace TaskFlow.Data.Entities
 {
-    public class TaskEntity : ISSoftDeletable
+    public class TaskEntity : ISAuditable
     {
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;

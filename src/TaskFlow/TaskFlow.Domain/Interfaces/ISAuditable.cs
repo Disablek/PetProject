@@ -1,4 +1,4 @@
-﻿namespace TaskFlow.Data.Entities.Interfaces;
+﻿namespace TaskFlow.Domain.Entities.Interfaces;
 public class ISAuditable : ISSoftDeletable
 {
     public DateTime CreatedAt { get; set; }

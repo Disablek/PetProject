@@ -1,8 +1,9 @@
-﻿using TaskFlow.Data.Entities.Interfaces;
+﻿using TaskFlow.Domain.Entities.Interfaces;
+
 
 namespace TaskFlow.Data.Entities
 {
-    public class ProjectEntity : ISSoftDeletable
+    public class ProjectEntity : ISAuditable
     {
         public Guid Id { get; set; }
 

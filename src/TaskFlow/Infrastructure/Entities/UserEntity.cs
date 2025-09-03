@@ -1,8 +1,8 @@
-﻿using TaskFlow.Data.Entities.Interfaces;
+﻿using TaskFlow.Domain.Entities.Interfaces;
 
 namespace TaskFlow.Data.Entities
 {
-    public class UserEntity : ISSoftDeletable
+    public class UserEntity : ISAuditable
     {
         public Guid Id { get; set; }
         public string UserName { get; set; } = string.Empty;

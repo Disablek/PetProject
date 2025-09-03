@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\entities\\projectentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|solutionrelative:infrastructure\\entities\\projectentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\entities\\taskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|solutionrelative:infrastructure\\entities\\taskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\entities\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\entities\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\entities\\projectentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|solutionrelative:infrastructure\\entities\\projectentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\entities\\interfaces\\issoftdeletable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|solutionrelative:infrastructure\\entities\\interfaces\\issoftdeletable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\repositories\\interfaces\\itasksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|solutionrelative:infrastructure\\configurations\\projectconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\entities\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\entities\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\entities\\enums\\priority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|solutionrelative:infrastructure\\entities\\enums\\priority.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,11 +82,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ISSoftDeletable.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\Interfaces\\ISSoftDeletable.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\Interfaces\\ISSoftDeletable.cs",
@@ -99,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ISAuditable.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\Interfaces\\ISAuditable.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\Interfaces\\ISAuditable.cs",
@@ -112,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IAuditable.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\Interfaces\\IAuditable.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\Interfaces\\IAuditable.cs",
@@ -125,33 +125,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TaskEntity.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\TaskEntity.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\TaskEntity.cs",
               "ToolTip": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\TaskEntity.cs",
               "RelativeToolTip": "Infrastructure\\Entities\\TaskEntity.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBcAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-03T07:29:51.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "TaskDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\TaskDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\TaskDto.cs",
               "ToolTip": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\TaskDto.cs",
               "RelativeToolTip": "Application\\DTO\\TaskDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-03T07:29:41.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UserRepository.cs",
@@ -164,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ProjectEntity.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\ProjectEntity.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\ProjectEntity.cs",
@@ -177,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UserEntity.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\UserEntity.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\UserEntity.cs",
@@ -190,7 +190,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\Entities\\TaskItem.cs",
+              "RelativeDocumentMoniker": "Application\\Entities\\TaskItem.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\Entities\\TaskItem.cs",
+              "RelativeToolTip": "Application\\Entities\\TaskItem.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T09:00:23.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Repositories\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\IUserRepository.cs",
@@ -203,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ITasksRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Repositories\\Interfaces\\ITasksRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\ITasksRepository.cs",
@@ -216,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ProjectsRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Repositories\\ProjectsRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ProjectsRepository.cs",
@@ -237,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ITaskRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\Interfaces\\ITaskRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\ITaskRepository.cs",
@@ -250,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TasksRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Repositories\\TasksRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TasksRepository.cs",
@@ -263,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IProjectsRepository.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Repositories\\Interfaces\\IProjectsRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\Interfaces\\IProjectsRepository.cs",
@@ -276,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "ProjectConfiguration.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Configurations\\ProjectConfiguration.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Configurations\\ProjectConfiguration.cs",
@@ -286,18 +299,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-03T07:23:45.221Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TaskItem.cs",
-              "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\Entities\\TaskItem.cs",
-              "RelativeDocumentMoniker": "Application\\Entities\\TaskItem.cs",
-              "ToolTip": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\Entities\\TaskItem.cs",
-              "RelativeToolTip": "Application\\Entities\\TaskItem.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:00:23.593Z"
             },
             {
               "$type": "Document",

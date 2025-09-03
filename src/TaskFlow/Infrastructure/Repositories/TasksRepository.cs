@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TaskFlow.Data.Entities;
-using TaskFlow.Data.Entities.Enums;
 using TaskFlow.Data.Repositories.Interfaces;
+using TaskFlow.Domain.Entities.Enums;
 
 namespace TaskFlow.Data.Repositories;
 

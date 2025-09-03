@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using TaskFlow.Data.Configurations;
 using TaskFlow.Data.Entities;
-using TaskFlow.Data.Entities.Interfaces;
+using TaskFlow.Domain.Entities.Interfaces;
 
 namespace TaskFlow.Data;
 

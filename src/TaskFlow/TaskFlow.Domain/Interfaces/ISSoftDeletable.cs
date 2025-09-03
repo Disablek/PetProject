@@ -1,4 +1,4 @@
-﻿namespace TaskFlow.Data.Entities.Interfaces;
+﻿namespace TaskFlow.Domain.Entities.Interfaces;
 public class ISSoftDeletable
 {
     public DateTime? DeletedAt { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace TaskFlow.Data.Entities.Enums
+﻿namespace TaskFlow.Domain.Entities.Enums
 {
     public enum Status
     {

@@ -1,5 +1,5 @@
 ﻿using TaskFlow.Data.Entities;
-using TaskFlow.Data.Entities.Enums;
+using TaskFlow.Domain.Entities.Enums;
 
 namespace TaskFlow.Data.Repositories.Interfaces;
 
