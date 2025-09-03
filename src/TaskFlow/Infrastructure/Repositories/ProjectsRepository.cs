@@ -12,21 +12,21 @@ public class ProjectsRepository : IProjectsRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<ProjectEntity>> Get() => 
+    public async Task<List<ProjectEntity>> GetAsync() => 
         await _dbContext.Projects.AsNoTracking().ToListAsync();
 
-    public async Task<ProjectEntity?> GetById(Guid id) =>
+    public async Task<ProjectEntity?> GetByIdAsync(Guid id) =>
         await _dbContext.Projects
             .AsNoTracking()
             .FirstOrDefaultAsync(c => c.Id == id);
 
-    public async Task<List<ProjectEntity>> GetWithTask() =>
+    public async Task<List<ProjectEntity>> GetWithTaskAsync() =>
         await _dbContext.Projects
             .AsNoTracking()
             .Include(c => c.Tasks)
             .ToListAsync();
 
-    public async Task<List<ProjectEntity>> GetByPage(int page, int pageSize) //Пагинация
+    public async Task<List<ProjectEntity>> GetByPageAsync(int page, int pageSize) //Пагинация
     {
         return await _dbContext.Projects
             .AsNoTracking()
@@ -35,7 +35,7 @@ public class ProjectsRepository : IProjectsRepository
             .ToListAsync();
     }
 
-    public async Task Add(Guid id, Guid adminId, string name, string description)
+    public async Task AddAsync(Guid id, Guid adminId, string name, string description)
     {
         var projectEntity = new ProjectEntity
         {
@@ -48,7 +48,7 @@ public class ProjectsRepository : IProjectsRepository
         await _dbContext.AddAsync(projectEntity);
         await _dbContext.SaveChangesAsync();
     }
-    public async Task Update(Guid id, Guid adminId, string name, string description)
+    public async Task UpdateAsync(Guid id, Guid adminId, string name, string description)
     {
         await _dbContext.Projects
             .Where(p => p.Id == id)
@@ -56,7 +56,7 @@ public class ProjectsRepository : IProjectsRepository
                 SetProperty(c => c.Name, name)
                 .SetProperty(c=> c.Description, description));
     }
-    public async Task Delete(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
         var project = await _dbContext.Projects.FirstOrDefaultAsync(p => p.Id == id);
         if (project is not null)

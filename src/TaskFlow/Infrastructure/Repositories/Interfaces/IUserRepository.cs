@@ -4,10 +4,10 @@ namespace TaskFlow.Data.Repositories.Interfaces;
 
 public interface IUserRepository
 {
-    Task<List<UserEntity>> Get();
-    Task<UserEntity?> GetById(Guid id);
-    Task<List<UserEntity>> GetWithProjects();
-    Task Add(Guid id, string userName, string passwordHash);
-    Task UpdateUserName(Guid id, string userName);
-    Task Delete(Guid id);
+    Task<List<UserEntity>> GetAsync();
+    Task<UserEntity?> GetByIdAsync(Guid id);
+    Task<List<UserEntity>> GetWithProjectsAsync();
+    Task AddAsync(Guid id, string userName, string passwordHash);
+    Task UpdateUserNameAsync(Guid id, string userName);
+    Task DeleteAsync(Guid id);
 }

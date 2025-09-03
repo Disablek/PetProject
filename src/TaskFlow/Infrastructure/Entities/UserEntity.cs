@@ -2,7 +2,7 @@
 
 namespace TaskFlow.Data.Entities
 {
-    public class UserEntity : IAuditable, ISoftDeletable
+    public class UserEntity : ISSoftDeletable
     {
         public Guid Id { get; set; }
         public string UserName { get; set; } = string.Empty;
@@ -11,9 +11,5 @@ namespace TaskFlow.Data.Entities
         public List<ProjectEntity> Projects { get; set; } = [];
         public List<TaskEntity> CreatedTasks { get; set; } = []; 
         public List<TaskEntity> AssignedTasks { get; set; } = []; 
-
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-        public DateTime? DeletedAt { get; set; }
     }
 }

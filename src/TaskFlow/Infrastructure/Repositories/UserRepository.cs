@@ -11,21 +11,21 @@ public class UserRepository : IUserRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<UserEntity>> Get() =>
+    public async Task<List<UserEntity>> GetAsync() =>
         await _dbContext.Users.AsNoTracking().ToListAsync();
 
-    public async Task<UserEntity?> GetById(Guid id) =>
+    public async Task<UserEntity?> GetByIdAsync(Guid id) =>
         await _dbContext.Users
             .AsNoTracking()
             .FirstOrDefaultAsync(c => c.Id == id);
 
-    public async Task<List<UserEntity>> GetWithProjects() =>
+    public async Task<List<UserEntity>> GetWithProjectsAsync() =>
         await _dbContext.Users
             .AsNoTracking()
             .Include(c => c.Projects)
             .ToListAsync();
 
-    public async Task Add(Guid id, string userName, string passwordHash)
+    public async Task AddAsync(Guid id, string userName, string passwordHash)
     {
         var userEntity = new UserEntity()
         {
@@ -37,14 +37,14 @@ public class UserRepository : IUserRepository
         await _dbContext.AddAsync(userEntity);
         await _dbContext.SaveChangesAsync();
     }
-    public async Task UpdateUserName(Guid id, string userName)
+    public async Task UpdateUserNameAsync(Guid id, string userName)
     {
         await _dbContext.Users
             .Where(p => p.Id == id)
             .ExecuteUpdateAsync(s => s.
                 SetProperty(c => c.UserName, userName));
     }
-    public async Task Delete(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
         var user = await _dbContext.Users.FirstOrDefaultAsync(p => p.Id == id);
         if (user is not null)

@@ -13,19 +13,19 @@ public class TasksRepository : ITasksRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<TaskEntity>> GetByProject(Guid projectId) =>
+    public async Task<List<TaskEntity>> GetByProjectAsync(Guid projectId) =>
         await _dbContext.Tasks
             .AsNoTracking()
             .Where(t => t.ProjectId == projectId)
             .ToListAsync();
 
-    public async Task<TaskEntity?> GetById(Guid id) =>
+    public async Task<TaskEntity?> GetByIdAsync(Guid id) =>
         await _dbContext.Tasks
             .AsNoTracking()
             .FirstOrDefaultAsync(c => c.Id == id);
 
 
-    public async Task Add(Guid id, Guid projectId,string title, string description, DateTime? dueTime, Priority priority, Guid creatorId)
+    public async Task AddAsync(Guid id, Guid projectId,string title, string description, DateTime? dueTime, Priority priority, Guid creatorId)
     {
         var taskEntity = new TaskEntity
         {
@@ -41,7 +41,7 @@ public class TasksRepository : ITasksRepository
         await _dbContext.AddAsync(taskEntity);
         await _dbContext.SaveChangesAsync();
     }
-    public async Task Update(Guid id, string title, string description, DateTime? dueTime, Priority priority, Guid asigneeId)
+    public async Task UpdateAsync(Guid id, string title, string description, DateTime? dueTime, Priority priority, Guid asigneeId)
     {
         await _dbContext.Tasks
             .Where(p => p.Id == id)
@@ -53,7 +53,7 @@ public class TasksRepository : ITasksRepository
                 .SetProperty(c => c.Priority, priority));
     }
 
-    public async Task Delete(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
         var task = await _dbContext.Tasks.FirstOrDefaultAsync(p => p.Id == id);
         if (task is not null)
