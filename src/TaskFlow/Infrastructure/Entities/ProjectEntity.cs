@@ -10,8 +10,8 @@ namespace TaskFlow.Data.Entities
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
-        public List<TaskEntity> Tasks { get; set; } = new();
-        public List<UserEntity> Users { get; set; } = new();
+        public ICollection<TaskEntity> Tasks { get; set; } = new HashSet<TaskEntity>();
+        public ICollection<UserEntity> Users { get; set; } = new HashSet<UserEntity>();
 
         public Guid AdminId { get; set; }
         public UserEntity? Admin { get; set; }

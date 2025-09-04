@@ -28,3 +28,9 @@ E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\obj\Debug\net8.0\refint\TaskFlo
 E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.pdb
 E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.Data.genruntimeconfig.cache
 E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\obj\Debug\net8.0\ref\TaskFlow.Data.dll
+E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Domain.deps.json
+E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Domain.runtimeconfig.json
+E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Domain.exe
+E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Domain.dll
+E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\bin\Debug\net8.0\TaskFlow.Domain.pdb
+E:\Study\CSCode\Code\src\TaskFlow\Infrastructure\obj\Debug\net8.0\TaskFlow.1EE62009.Up2Date
