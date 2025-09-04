@@ -1,6 +1,6 @@
 ﻿using TaskFlow.Domain.Entities.Enums;
 
-namespace TaskFlow.Business.DTO;
+namespace TaskFlow.Business.DTO.Task;
 public class TaskDto
 {
     public Guid Id { get; set; }

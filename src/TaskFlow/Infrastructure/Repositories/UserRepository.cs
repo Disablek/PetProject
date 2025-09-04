@@ -25,13 +25,14 @@ public class UserRepository : IUserRepository
             .Include(c => c.Projects)
             .ToListAsync();
 
-    public async Task AddAsync(Guid id, string userName, string passwordHash)
+    public async Task AddAsync(Guid id, string userName, string passwordHash, string fullName)
     {
         var userEntity = new UserEntity()
         {
             Id = id,
             UserName = userName,
-            PasswordHash = passwordHash
+            PasswordHash = passwordHash,
+            FullName = fullName
         };
 
         await _dbContext.AddAsync(userEntity);
@@ -44,6 +45,14 @@ public class UserRepository : IUserRepository
             .ExecuteUpdateAsync(s => s.
                 SetProperty(c => c.UserName, userName));
     }
+    public async Task UpdatePasswordAsync(Guid id, string passwordHash)
+    {
+        await _dbContext.Users
+            .Where(p => p.Id == id)
+            .ExecuteUpdateAsync(s => s.
+                SetProperty(c => c.PasswordHash, passwordHash));
+    }
+
     public async Task DeleteAsync(Guid id)
     {
         var user = await _dbContext.Users.FirstOrDefaultAsync(p => p.Id == id);

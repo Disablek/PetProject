@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using TaskFlow.Business.DTO;
+using TaskFlow.Business.DTO.Task;
 using TaskFlow.Data.Entities;
-namespace TaskFlow.Business.Mapper;
+namespace TaskFlow.Business.DTO.Task.Mapper;
 public class TaskProfile : Profile
 {
     public TaskProfile()
