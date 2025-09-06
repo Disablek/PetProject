@@ -28,8 +28,4 @@
     <ProjectReference Include="..\TaskFlow.Domain\TaskFlow.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTO\User\Validator\" />
-  </ItemGroup>
-
 </Project>
