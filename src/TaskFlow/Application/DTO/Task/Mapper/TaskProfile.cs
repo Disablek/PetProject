@@ -21,5 +21,9 @@ public class TaskProfile : Profile
                 .MapFrom(d => d.CreatorId))
             .ForMember(e => e.ProjectId, opt => opt
                 .MapFrom(d => d.ProjectId));
+
+        CreateMap<TaskEntity, TaskListItemDto>()
+            .ForMember(e => e.AssigneeName, t => t
+                .MapFrom(d => d.Creator.UserName));
     }
 }

@@ -13,6 +13,12 @@ public class TasksRepository : ITasksRepository
         _dbContext = dbContext;
     }
 
+    public async Task<List<TaskEntity>> GetAllTasksAsync() =>
+        await _dbContext.Tasks
+            .AsNoTracking()
+            .ToListAsync();
+    
+
     public async Task<List<TaskEntity>> GetByProjectAsync(Guid projectId) =>
         await _dbContext.Tasks
             .AsNoTracking()
