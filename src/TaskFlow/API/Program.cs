@@ -1,8 +1,5 @@
 using API.Middleware;
 using Microsoft.EntityFrameworkCore;
-using TaskFlow.Business.Interfaces;
-using TaskFlow.Business.Repositories;
-using TaskFlow.Business.Services;
 using TaskFlow.Data;
 
 
@@ -23,8 +20,8 @@ builder.Services.AddSwaggerGen();
 
 
 // DI
-builder.Services.AddScoped<ITaskRepository, InMemoryTaskRepository>();
-builder.Services.AddScoped<TaskService>();
+//builder.Services.AddScoped<ITaskRepository, InMemoryTaskRepository>();
+//builder.Services.AddScoped<TaskService>();
 
 var app = builder.Build();
 

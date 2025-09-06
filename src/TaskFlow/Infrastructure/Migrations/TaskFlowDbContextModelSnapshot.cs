@@ -46,6 +46,12 @@ namespace TaskFlow.Data.Migrations
                     b.Property<Guid>("AdminId")
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -53,6 +59,9 @@ namespace TaskFlow.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -67,7 +76,7 @@ namespace TaskFlow.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("AssigneeId")
+                    b.Property<Guid?>("AssigneeId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime?>("CompletedTime")
@@ -132,6 +141,13 @@ namespace TaskFlow.Data.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("text");
@@ -182,8 +198,7 @@ namespace TaskFlow.Data.Migrations
                     b.HasOne("TaskFlow.Data.Entities.UserEntity", "Assignee")
                         .WithMany("AssignedTasks")
                         .HasForeignKey("AssigneeId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("TaskFlow.Data.Entities.UserEntity", "Creator")
                         .WithMany("CreatedTasks")

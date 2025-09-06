@@ -34,3 +34,8 @@ E:\Study\CSCode\Code\src\TaskFlow\Application\obj\Debug\net8.0\refint\TaskFlow.B
 E:\Study\CSCode\Code\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.Business.pdb
 E:\Study\CSCode\Code\src\TaskFlow\Application\obj\Debug\net8.0\TaskFlow.Business.genruntimeconfig.cache
 E:\Study\CSCode\Code\src\TaskFlow\Application\obj\Debug\net8.0\ref\TaskFlow.Business.dll
+E:\Study\CSCode\Code\src\TaskFlow\Application\bin\Debug\net8.0\TaskFlow.Domain.deps.json
+E:\Study\CSCode\Code\src\TaskFlow\Application\bin\Debug\net8.0\TaskFlow.Domain.runtimeconfig.json
+E:\Study\CSCode\Code\src\TaskFlow\Application\bin\Debug\net8.0\TaskFlow.Domain.exe
+E:\Study\CSCode\Code\src\TaskFlow\Application\bin\Debug\net8.0\TaskFlow.Domain.dll
+E:\Study\CSCode\Code\src\TaskFlow\Application\bin\Debug\net8.0\TaskFlow.Domain.pdb

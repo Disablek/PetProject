@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\user\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\user\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\user\\userpreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\user\\userpreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\user\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\user\\updateuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\task\\taskpreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\project\\updateprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\project\\updateprojectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|e:\\study\\cscode\\code\\src\\taskflow\\application\\dto\\user\\userpreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D02F64E8-291C-4693-AAC3-A1D8B5860DFC}|Application\\TaskFlow.Business.csproj|solutionrelative:application\\dto\\user\\userpreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D28FB1EE-9096-474A-89D3-2EAE86E435AE}|Infrastructure\\TaskFlow.Data.csproj|e:\\study\\cscode\\code\\src\\taskflow\\infrastructure\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -190,7 +190,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -202,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TaskPreviewDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Task\\TaskPreviewDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\Task\\TaskPreviewDto.cs",
@@ -215,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UpdateUserDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\User\\UpdateUserDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\User\\UpdateUserDto.cs",
@@ -228,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\User\\UserDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\User\\UserDto.cs",
@@ -241,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UserEntity.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\UserEntity.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\UserEntity.cs",
@@ -254,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TaskEntity.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\TaskEntity.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\TaskEntity.cs",
@@ -267,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TaskDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Task\\TaskDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\Task\\TaskDto.cs",
@@ -280,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TaskListItemDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Task\\TaskListItemDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\Task\\TaskListItemDto.cs",
@@ -293,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UpdateTaskDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Task\\UpdateTaskDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\Task\\UpdateTaskDto.cs",
@@ -306,20 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UpdateProjectDto.cs",
-              "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Project\\UpdateProjectDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTO\\Project\\UpdateProjectDto.cs",
-              "ToolTip": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Project\\UpdateProjectDto.cs",
-              "RelativeToolTip": "Application\\DTO\\Project\\UpdateProjectDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T17:44:05.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "UserPreviewDto.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\User\\UserPreviewDto.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\User\\UserPreviewDto.cs",
@@ -328,6 +315,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-04T17:32:01.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UpdateProjectDto.cs",
+              "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Project\\UpdateProjectDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\Project\\UpdateProjectDto.cs",
+              "ToolTip": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Application\\DTO\\Project\\UpdateProjectDto.cs",
+              "RelativeToolTip": "Application\\DTO\\Project\\UpdateProjectDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T17:44:05.71Z",
               "EditorCaption": ""
             },
             {
@@ -345,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ProjectEntity.cs",
               "DocumentMoniker": "E:\\Study\\CSCode\\Code\\src\\TaskFlow\\Infrastructure\\Entities\\ProjectEntity.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Entities\\ProjectEntity.cs",
