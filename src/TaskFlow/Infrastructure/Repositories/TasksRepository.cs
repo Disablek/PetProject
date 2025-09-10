@@ -31,32 +31,30 @@ public class TasksRepository : ITasksRepository
             .FirstOrDefaultAsync(c => c.Id == id);
 
 
-    public async Task AddAsync(Guid id, Guid projectId,string title, string description, DateTime? dueTime, Priority priority, Guid creatorId)
+    public async Task<TaskEntity> AddAsync(TaskEntity entity)
     {
-        var taskEntity = new TaskEntity
-        {
-            Id = id,
-            ProjectId = projectId,
-            Title = title,
-            Description = description,
-            DueTime = dueTime,
-            Priority = priority,
-            CreatorId = creatorId
-        };
+        var taskEntity = entity;
 
         await _dbContext.AddAsync(taskEntity);
         await _dbContext.SaveChangesAsync();
+        return entity;
     }
-    public async Task UpdateAsync(Guid id, string title, string description, DateTime? dueTime, Priority priority, Guid asigneeId)
+
+    public async Task<TaskEntity?> GetTrackedByIdAsync(Guid id)
     {
-        await _dbContext.Tasks
-            .Where(p => p.Id == id)
-            .ExecuteUpdateAsync(s => s
-                .SetProperty(c => c.Title, title)
-                .SetProperty(c => c.Description, description)
-                .SetProperty(c => c.DueTime, dueTime)
-                .SetProperty(c => c.AssigneeId, asigneeId)
-                .SetProperty(c => c.Priority, priority));
+        return await _dbContext.Tasks.FirstOrDefaultAsync(t => t.Id == id);
+    }
+
+    public async Task<TaskEntity> UpdateAsync(TaskEntity entity)
+    {
+        var entry = _dbContext.Entry(entity);
+        if (entry.State == EntityState.Detached)
+        {
+            _dbContext.Tasks.Update(entity);
+        }
+
+        await _dbContext.SaveChangesAsync();
+        return entity;
     }
 
     public async Task DeleteAsync(Guid id)

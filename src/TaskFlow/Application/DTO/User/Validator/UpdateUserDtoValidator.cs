@@ -11,6 +11,5 @@ public class UpdateUserDtoValidator : AbstractValidator<UpdateUserDto>
             .NotNull();
         RuleFor(user => user.UserName)
             .NotNull().MinimumLength(3);
-
     }
 }

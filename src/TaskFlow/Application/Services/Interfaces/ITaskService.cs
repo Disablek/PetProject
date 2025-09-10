@@ -8,7 +8,6 @@ namespace TaskFlow.Business.Services.Interfaces
         Task<List<TaskListItemDto>> GetAllAsync();
         Task<TaskDto?> GetByIdAsync(Guid id);
         Task<List<TaskListItemDto>> GetByProjectAsync(Guid projectId);
-
         Task<TaskDto> CreateAsync(CreateTaskDto dto);
         Task<TaskDto?> UpdateAsync(Guid id, UpdateTaskDto dto);
         Task<bool> DeleteAsync(Guid id);

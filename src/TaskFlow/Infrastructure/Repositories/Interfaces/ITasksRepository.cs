@@ -8,7 +8,8 @@ public interface ITasksRepository
     Task<List<TaskEntity>> GetAllTasksAsync();
     Task<List<TaskEntity>> GetByProjectAsync(Guid projectId);
     Task<TaskEntity?> GetByIdAsync(Guid id);
-    Task AddAsync(Guid id, Guid projectId, string title, string description, DateTime? dueTime, Priority priority, Guid creatorId);
-    Task UpdateAsync(Guid id, string title, string description, DateTime? dueTime, Priority priority, Guid asigneeId);
+    Task<TaskEntity?> GetTrackedByIdAsync(Guid id);
+    Task<TaskEntity> AddAsync(TaskEntity entity);
+    Task<TaskEntity> UpdateAsync(TaskEntity entity);
     Task DeleteAsync(Guid id);
 }
