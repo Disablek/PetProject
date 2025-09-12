@@ -57,14 +57,19 @@ public class TasksRepository : ITasksRepository
         return entity;
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task<bool> DeleteAsync(Guid id)
     {
         var task = await _dbContext.Tasks.FirstOrDefaultAsync(p => p.Id == id);
         if (task is not null)
         {
             _dbContext.Tasks.Remove(task);
             await _dbContext.SaveChangesAsync();
+            var affected = await _dbContext.Tasks
+                .Where(t => t.Id == id)
+                .ExecuteDeleteAsync();
+            return affected > 0;
         }
+        return false;
     }
 
 }

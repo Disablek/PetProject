@@ -11,5 +11,5 @@ public interface ITasksRepository
     Task<TaskEntity?> GetTrackedByIdAsync(Guid id);
     Task<TaskEntity> AddAsync(TaskEntity entity);
     Task<TaskEntity> UpdateAsync(TaskEntity entity);
-    Task DeleteAsync(Guid id);
+    Task<bool> DeleteAsync(Guid id);
 }

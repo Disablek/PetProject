@@ -10,5 +10,7 @@ public interface IProjectsRepository
     Task AddAsync(Guid id, Guid adminId, string name, string description);
     Task UpdateAsync(Guid id, Guid adminId, string name, string description);
     Task DeleteAsync(Guid id);
+    Task<bool> IsUserInProjectAsync(Guid projectId, Guid userId);
+    Task<bool> IsUserAdminAsync(Guid projectId, Guid userId);
 }
 

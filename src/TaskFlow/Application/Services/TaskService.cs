@@ -87,13 +87,9 @@ namespace TaskFlow.Business.Services
 
         public async Task<bool> DeleteAsync(Guid id)
         {
-            var entity = await _taskRepository.GetTrackedByIdAsync(id);
-            if (entity != null)
-            {
-                await _taskRepository.DeleteAsync(id);
-                return true;
-            }
-            return false;
+
+            var deleted = await _taskRepository.DeleteAsync(id);
+            return deleted;
         }
 
 
