@@ -7,7 +7,7 @@ public class UserDto
     public Guid Id { get; set; }
     public string UserName { get; set; } = string.Empty;
     public string FullName { get; set; }
-    public string? Email { get; set; }
+    public string Email { get; set; }
 
     public List<ProjectDto> Projects { get; set; } = new();
     public List<TaskPreviewDto> CreatedTasks { get; set; } = new();

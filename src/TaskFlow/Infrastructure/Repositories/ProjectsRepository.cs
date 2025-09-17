@@ -20,6 +20,21 @@ public class ProjectsRepository : IProjectsRepository
             .AsNoTracking()
             .FirstOrDefaultAsync(c => c.Id == id);
 
+    public async Task<bool> IsUserAdminAsync(Guid projectId, Guid userId)
+    {
+        return await _dbContext.Projects
+            .Where(p => p.Id == projectId && p.AdminId == userId)
+            .AnyAsync();
+    }
+
+    public async Task<bool> IsUserInProjectAsync(Guid projectId, Guid userId)
+    {
+        return await _dbContext.Projects
+            .Where(p => p.Id == projectId)
+            .Select(p => p.Users.Any(u => u.Id == userId))
+            .FirstOrDefaultAsync();
+    }
+
     public async Task<List<ProjectEntity>> GetWithTaskAsync() =>
         await _dbContext.Projects
             .AsNoTracking()

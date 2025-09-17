@@ -4,7 +4,7 @@ using TaskFlow.Business.DTO.Task;
 namespace TaskFlow.Business.DTO.User;
 public class UpdateUserDto
 {
-    public string UserName { get; set; } = string.Empty;
+    public string? UserName { get; set; }
     public string? Email { get; set; }
     public string? PasswordHash { get; set; }
 

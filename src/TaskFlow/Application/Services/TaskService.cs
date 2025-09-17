@@ -1,20 +1,23 @@
 using AutoMapper;
 using TaskFlow.Business.DTO.Task;
+using TaskFlow.Business.Services.Interfaces;
 using TaskFlow.Data.Entities;
 using TaskFlow.Data.Repositories.Interfaces;
 using TaskFlow.Domain.Entities.Enums;
 
 namespace TaskFlow.Business.Services
 {
-    public class TaskService
+    public class TaskService : ITaskService
     {
         private readonly ITasksRepository _taskRepository;
+        private readonly IProjectsRepository _projectsRepository;
         private readonly IMapper _mapper;
 
-        public TaskService(ITasksRepository taskRepository, IMapper mapper)
+        public TaskService(ITasksRepository taskRepository, IMapper mapper, IProjectsRepository projectsRepository)
         {
             _taskRepository = taskRepository;
             _mapper = mapper;
+            _projectsRepository = projectsRepository;
         }
 
         public async Task<List<TaskListItemDto>> GetAllAsync()
@@ -85,13 +88,77 @@ namespace TaskFlow.Business.Services
             return _mapper.Map<TaskDto>(updated);
         }
 
-        public async Task<bool> DeleteAsync(Guid id)
+        public async Task<bool> DeleteAsync(Guid taskId, Guid currentUserId)
         {
+            var task = await _taskRepository.GetByIdAsync(taskId);
+            if (task == null)
+                return false;
 
-            var deleted = await _taskRepository.DeleteAsync(id);
-            return deleted;
+            if (task.CreatorId == currentUserId)
+            {
+                var isInProject = await _projectsRepository.IsUserInProjectAsync(task.ProjectId, currentUserId);
+                if (isInProject)
+                {
+                    return await _taskRepository.DeleteAsync(taskId);
+                }
+            }
+
+            var isAdmin = await _projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId);
+            if (isAdmin)
+            {
+                return await _taskRepository.DeleteAsync(taskId);
+            }
+
+            throw new Exception("Нет прав на удаление этой задачи"); 
         }
 
+        public async Task<TaskDto?> ChangeStatusAsync(Guid id, Status newStatus, Guid performedBy, TaskDto taskDto)
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null)
+                return null;
+
+            if (task.AssigneeId == null)
+                task.AssigneeId = performedBy;
+
+            if (task.AssigneeId == performedBy)
+            {
+                var isInProject = await _projectsRepository.IsUserInProjectAsync(task.ProjectId, performedBy);
+                if (isInProject)
+                {
+                    task.Status = newStatus;
+                    return _mapper.Map<TaskDto?>( await _taskRepository.UpdateAsync(task));
+                }
+                else
+                    throw new Exception("Пользователь не находится в проекте");
+            }
+            else if (await _projectsRepository.IsUserAdminAsync(task.ProjectId, performedBy))
+            {
+                task.Status = newStatus;
+                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+            }
+            else
+                throw new Exception("Нет прав на изменение этой задачи");
+        }
+
+        public async Task<TaskDto?> AssignAsync(Guid id, Guid assigneeId, Guid changedBy)
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null) return null;
+            if (task.AssigneeId == null)
+            {
+                task.AssigneeId = assigneeId;
+                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+            }
+
+            if (await _projectsRepository.IsUserAdminAsync(task.ProjectId,changedBy))
+            {
+                task.AssigneeId = assigneeId;
+                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+            }
+
+            throw new Exception("Невозможно изменить исполнителя");
+        }
 
 
 

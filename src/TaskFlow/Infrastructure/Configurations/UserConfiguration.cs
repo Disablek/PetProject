@@ -16,6 +16,7 @@ public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
             //.UsingEntity(j => j.ToTable("UserProjects"));
 
         builder.HasIndex(u => u.UserName).IsUnique();
+        builder.HasIndex(u => u.Email).IsUnique();
     }
 }
 

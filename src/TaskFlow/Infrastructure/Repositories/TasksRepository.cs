@@ -28,7 +28,15 @@ public class TasksRepository : ITasksRepository
     public async Task<TaskEntity?> GetByIdAsync(Guid id) =>
         await _dbContext.Tasks
             .AsNoTracking()
-            .FirstOrDefaultAsync(c => c.Id == id);
+            .Select(t => new TaskEntity
+            {
+                Id = t.Id,
+                ProjectId = t.ProjectId,
+                CreatorId = t.CreatorId,
+                AssigneeId = t.AssigneeId,
+                Status = t.Status,
+            })
+            .FirstOrDefaultAsync(t => t.Id == id);
 
 
     public async Task<TaskEntity> AddAsync(TaskEntity entity)
@@ -59,17 +67,7 @@ public class TasksRepository : ITasksRepository
 
     public async Task<bool> DeleteAsync(Guid id)
     {
-        var task = await _dbContext.Tasks.FirstOrDefaultAsync(p => p.Id == id);
-        if (task is not null)
-        {
-            _dbContext.Tasks.Remove(task);
-            await _dbContext.SaveChangesAsync();
-            var affected = await _dbContext.Tasks
-                .Where(t => t.Id == id)
-                .ExecuteDeleteAsync();
-            return affected > 0;
-        }
-        return false;
+        var affected = await _dbContext.Tasks.Where(t => t.Id == id).ExecuteDeleteAsync();
+        return affected > 0;
     }
-
 }
