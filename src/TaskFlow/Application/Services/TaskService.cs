@@ -160,6 +160,21 @@ namespace TaskFlow.Business.Services
             throw new Exception("Невозможно изменить исполнителя");
         }
 
+        public async Task<TaskDto?> UpdatePriorityAsync(Guid id, Priority priority, Guid currentUserId)
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null) return null;
+
+            if (task.CreatorId == currentUserId ||
+                await _projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId))
+            {
+                task.Priority = priority;
+                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+            }
+            else
+                throw new Exception("Нет прав на изменение этой задачи");
+        }
+
 
 
     }

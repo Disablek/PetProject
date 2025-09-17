@@ -13,7 +13,7 @@ namespace TaskFlow.Business.Services.Interfaces
         Task<bool> DeleteAsync(Guid taskId, Guid currentUserId);
         Task<TaskDto?> ChangeStatusAsync(Guid id, Status newStatus, Guid performedBy, TaskDto taskDto);
         Task<TaskDto?> AssignAsync(Guid id, Guid assigneeId, Guid changedBy);
-        Task<TaskDto?> UpdatePriorityAsync(Guid id, Priority priority);
+        Task<TaskDto?> UpdatePriorityAsync(Guid id, Priority priority, Guid currentUserId);
         Task<TaskDto?> UpdateDueTimeAsync(Guid id, DateTime? dueTime);
     }
 }

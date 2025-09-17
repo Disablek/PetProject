@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Data", "Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Domain", "TaskFlow.Domain\TaskFlow.Domain.csproj", "{6402D679-AD3F-4E1F-B3D3-7B2B3B0F2FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.Tests", "TaskFlow.Tests\TaskFlow.Tests.csproj", "{ACC845BE-B079-432D-A8F5-CDCC9D342406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{6402D679-AD3F-4E1F-B3D3-7B2B3B0F2FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6402D679-AD3F-4E1F-B3D3-7B2B3B0F2FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6402D679-AD3F-4E1F-B3D3-7B2B3B0F2FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC845BE-B079-432D-A8F5-CDCC9D342406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC845BE-B079-432D-A8F5-CDCC9D342406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC845BE-B079-432D-A8F5-CDCC9D342406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC845BE-B079-432D-A8F5-CDCC9D342406}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{4147742E-6A4D-4B50-AE73-6FE4F85AC6C6} = {2356FB5B-B6AA-4E4A-A706-E9A7DEBD04E4}
 		{D02F64E8-291C-4693-AAC3-A1D8B5860DFC} = {2356FB5B-B6AA-4E4A-A706-E9A7DEBD04E4}
 		{D28FB1EE-9096-474A-89D3-2EAE86E435AE} = {2356FB5B-B6AA-4E4A-A706-E9A7DEBD04E4}
+		{ACC845BE-B079-432D-A8F5-CDCC9D342406} = {2356FB5B-B6AA-4E4A-A706-E9A7DEBD04E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CD8090C-3905-45FB-9808-C83299CABB92}
