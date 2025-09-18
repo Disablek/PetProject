@@ -12,6 +12,8 @@ public interface ITasksRepository
     Task<TaskEntity> AddAsync(TaskEntity entity);
     Task<TaskEntity> UpdateAsync(TaskEntity entity);
     Task<bool> DeleteAsync(Guid id);
+    Task SaveChangeAsync(); // Удалить
+    Task Test(Guid id, int status); // Удалить
     
     // Методы для работы с пользователями (для мок-логики)
     Task<List<UserEntity>> GetAllUsersAsync();

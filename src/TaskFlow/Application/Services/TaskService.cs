@@ -141,27 +141,29 @@ namespace TaskFlow.Business.Services
             if (task.AssigneeId == null)
                 task.AssigneeId = performedBy;
 
-            if (task.AssigneeId == performedBy)
-            {
-                var isInProject = await projectsRepository.IsUserInProjectAsync(task.ProjectId, performedBy);
-                if (isInProject)
-                {
+            // if (task.AssigneeId == performedBy)
+            // {
+                // var isInProject = await projectsRepository.IsUserInProjectAsync(task.ProjectId, performedBy);
+                // if (isInProject)
+                // {
                     task.Status = newStatus;
-                    return mapper.Map<TaskDto?>( await taskRepository.UpdateAsync(task));
-                }
-                else
-                {
-                    throw new Exception("Пользователь не находится в проекте");
-                }
-            }
-            else if (await projectsRepository.IsUserAdminAsync(task.ProjectId, performedBy))
-            {
-                task.Status = newStatus;
-                return mapper.Map<TaskDto?>(await taskRepository.UpdateAsync(task));
-            }
-            else
-                throw new Exception("Нет прав на изменение этой задачи");
+                    await taskRepository.Test(id,2);
+                    return mapper.Map<TaskDto?>(task);
         }
+                // else
+                // {
+                //     throw new Exception("Пользователь не находится в проекте");
+                // }
+            // }
+            // if (await projectsRepository.IsUserAdminAsync(task.ProjectId, performedBy))
+            // {
+            //     task.Status = newStatus;
+            //     return mapper.Map<TaskDto?>(await taskRepository.UpdateAsync(task));
+            // }
+            // else
+            //     throw new Exception("Нет прав на изменение этой задачи");
+        
+    
 
         public async Task<TaskDto?> AssignAsync(Guid id, Guid assigneeId, Guid changedBy)
         {

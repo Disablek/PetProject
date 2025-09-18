@@ -53,10 +53,7 @@ public class TasksController : ControllerBase
 
     [HttpPatch("{id}/status")]
     [SwaggerOperation(Summary = "Изменить статус задачи", Tags = ["Tasks"])]
-    public async Task<TaskDto?> ChangeTaskStatus(
-        Guid id, 
-        [FromQuery] Status status, 
-        [FromQuery] Guid performedBy)
+    public async Task<TaskDto?> ChangeTaskStatus(Guid id, [FromQuery] Status status, [FromQuery] Guid performedBy)
     {
         var currentTask = await _taskService.GetByIdAsync(id);
         return await _taskService.ChangeStatusAsync(id, status, performedBy, currentTask!);
@@ -64,18 +61,12 @@ public class TasksController : ControllerBase
 
     [HttpPatch("{id}/assign")]
     [SwaggerOperation(Summary = "Назначить исполнителя задачи", Tags = ["Tasks"])]
-    public async Task<TaskDto?> AssignTask(
-        Guid id, 
-        [FromQuery] Guid assigneeId, 
-        [FromQuery] Guid changedBy) => 
+    public async Task<TaskDto?> AssignTask(Guid id, [FromQuery] Guid assigneeId, [FromQuery] Guid changedBy) => 
         await _taskService.AssignAsync(id, assigneeId, changedBy);
 
     [HttpPatch("{id}/priority")]
     [SwaggerOperation(Summary = "Изменить приоритет задачи", Tags = ["Tasks"])]
-    public async Task<TaskDto?> UpdateTaskPriority(
-        Guid id, 
-        [FromQuery] Priority priority, 
-        [FromQuery] Guid currentUserId) => 
+    public async Task<TaskDto?> UpdateTaskPriority(Guid id, [FromQuery] Priority priority, [FromQuery] Guid currentUserId) => 
         await _taskService.UpdatePriorityAsync(id, priority, currentUserId);
 
     [HttpPatch("{id}/due-time")]

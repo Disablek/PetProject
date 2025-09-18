@@ -27,7 +27,6 @@ public class TasksRepository : ITasksRepository
 
     public async Task<TaskEntity?> GetByIdAsync(Guid id) =>
         await _dbContext.Tasks
-            .AsNoTracking()
             .Select(t => new TaskEntity
             {
                 Id = t.Id,
@@ -80,6 +79,18 @@ public class TasksRepository : ITasksRepository
     public async Task AddUserAsync(UserEntity user)
     {
         await _dbContext.Users.AddAsync(user);
+        await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task SaveChangeAsync()
+    {
+        await _dbContext.SaveChangesAsync();
+    }
+    
+    public async Task Test(Guid id ,int status) // УДалить!!!!
+    {
+        var task = await _dbContext.Tasks.FindAsync(id);
+        if (task != null) task.Status = Status.Done;
         await _dbContext.SaveChangesAsync();
     }
 }

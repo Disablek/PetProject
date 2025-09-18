@@ -8,7 +8,6 @@ import {
 } from '@ant-design/icons';
 import { useTasks, useProjects } from '../hooks/useApi';
 import { TaskStatus } from '../types';
-import TestApi from '../components/TestApi';
 
 const { Title } = Typography;
 
@@ -39,9 +38,6 @@ const Dashboard: FC = () => {
         <Title level={2} className="mb-2">Дашборд</Title>
         <p className="text-gray-600">Обзор ваших проектов и задач</p>
       </div>
-
-      {/* Тестирование API */}
-      <TestApi />
 
       {/* Статистика */}
       <Row gutter={[16, 16]}>

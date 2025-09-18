@@ -1,25 +1,129 @@
 import { FC, useState } from 'react';
-import { Card, Button, Typography, Row, Col, Spin, Empty, Modal, Form, Input, Select, DatePicker, Space } from 'antd';
+import { Card, Button, Typography, Row, Col, Spin, Modal, Form, Input, Select, DatePicker } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined, UserOutlined } from '@ant-design/icons';
 import { useParams } from 'react-router-dom';
-import { useProjectTasks, useCreateTask, useUpdateTask, useDeleteTask, useUsers } from '../hooks/useApi';
+import { useProjectTasks, useCreateTask, useUpdateTask, useDeleteTask, useUsers, useChangeTaskStatus } from '../hooks/useApi';
 import { CreateTaskRequest, UpdateTaskRequest, Task, TaskStatus, TaskPriority } from '../types';
 import dayjs from 'dayjs';
+import {
+  DndContext,
+  DragEndEvent,
+  DragOverlay,
+  DragStartEvent,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  closestCorners,
+} from '@dnd-kit/core';
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import {
+  useSortable,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
 const { Title } = Typography;
 const { TextArea } = Input;
+
+// Компонент для перетаскиваемой задачи
+interface DraggableTaskProps {
+  task: Task;
+  onEdit: (task: Task) => void;
+  onDelete: (taskId: string) => void;
+  priorityColors: { [key in TaskPriority]: string };
+}
+
+const DraggableTask: FC<DraggableTaskProps> = ({ task, onEdit, onDelete, priorityColors }) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: task.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+      <Card
+        size="small"
+        className="cursor-pointer hover:shadow-md transition-shadow"
+        actions={[
+          <EditOutlined 
+            key="edit" 
+            onClick={() => onEdit(task)}
+          />,
+          <DeleteOutlined 
+            key="delete" 
+            onClick={() => onDelete(task.id)}
+          />,
+        ]}
+      >
+        <div className="space-y-2">
+          <div className="font-medium">{task.title}</div>
+          
+          {task.description && (
+            <div className="text-sm text-gray-600 line-clamp-2">
+              {task.description}
+            </div>
+          )}
+          
+          <div className="flex items-center justify-between">
+            <span className={`px-2 py-1 rounded-full text-xs ${priorityColors[task.priority]}`}>
+              {task.priority}
+            </span>
+            
+            {task.assignees && task.assignees.length > 0 && (
+              <div className="flex items-center space-x-1">
+                <UserOutlined className="text-gray-400" />
+                <span className="text-xs text-gray-500">
+                  {task.assignees.length}
+                </span>
+              </div>
+            )}
+          </div>
+          
+          {task.dueDate && (
+            <div className="text-xs text-gray-500">
+              До: {dayjs(task.dueDate).format('DD.MM.YYYY')}
+            </div>
+          )}
+        </div>
+      </Card>
+    </div>
+  );
+};
 
 const ProjectTasks: FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
   const [form] = Form.useForm();
+  const [activeTask, setActiveTask] = useState<Task | null>(null);
 
   const { data: tasks, isLoading } = useProjectTasks(projectId!);
   const { data: users } = useUsers();
   const createTaskMutation = useCreateTask();
   const updateTaskMutation = useUpdateTask();
   const deleteTaskMutation = useDeleteTask();
+  const changeStatusMutation = useChangeTaskStatus();
+
+  // Настройка сенсоров для DragAndDrop
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    })
+  );
 
   const handleCreateTask = () => {
     setEditingTask(null);
@@ -45,6 +149,60 @@ const ProjectTasks: FC = () => {
       await deleteTaskMutation.mutateAsync(taskId);
     } catch (error) {
       console.error('Ошибка при удалении задачи:', error);
+    }
+  };
+
+  // Обработчики для DragAndDrop
+  const handleDragStart = (event: DragStartEvent) => {
+    const { active } = event;
+    console.log('DragStart event:', { active: active.id });
+    const task = tasks?.find(t => t.id === active.id);
+    if (task) {
+      console.log('Setting active task:', task);
+      setActiveTask(task);
+    }
+  };
+
+  const handleDragEnd = async (event: DragEndEvent) => {
+    const { active, over } = event;
+    setActiveTask(null);
+
+    console.log('DragEnd event:', { active: active.id, over: over?.id });
+
+    if (!over || !active) return;
+
+    const taskId = active.id as string;
+    
+    // Извлекаем статус из ID колонки (убираем префикс "status-")
+    const overId = over.id as string;
+    const newStatus = overId.startsWith('status-') 
+      ? overId.replace('status-', '') as TaskStatus
+      : overId as TaskStatus;
+
+    console.log('Task ID:', taskId, 'Over ID:', overId, 'New Status:', newStatus);
+
+    // Находим задачу и проверяем, изменился ли статус
+    const task = tasks?.find(t => t.id === taskId);
+    console.log('Found task:', task);
+    
+    if (!task || task.status === newStatus) {
+      console.log('No task found or status unchanged');
+      return;
+    }
+
+    console.log('Changing status from', task.status, 'to', newStatus);
+
+    try {
+      // Используем мок-пользователя для performedBy
+      const mockUserId = '00000000-0000-0000-0000-000000000000';
+      await changeStatusMutation.mutateAsync({
+        taskId,
+        status: newStatus,
+        performedBy: mockUserId,
+      });
+      console.log('Status changed successfully');
+    } catch (error) {
+      console.error('Ошибка при изменении статуса задачи:', error);
     }
   };
 
@@ -131,81 +289,98 @@ const ProjectTasks: FC = () => {
         </Button>
       </div>
 
-      {/* Канбан доска */}
-      <Row gutter={[16, 16]}>
-        {Object.values(TaskStatus).map((status) => (
-          <Col xs={24} sm={12} lg={6} key={status}>
-            <Card 
-              title={
-                <div className="flex items-center justify-between">
-                  <span>{statusLabels[status]}</span>
-                  <span className="text-sm text-gray-500">
-                    {tasksByStatus[status].length}
-                  </span>
-                </div>
-              }
-              className="h-full"
-            >
-              <div className="space-y-3 min-h-[400px]">
-                {tasksByStatus[status].map((task) => (
-                  <Card
-                    key={task.id}
-                    size="small"
-                    className="cursor-pointer hover:shadow-md transition-shadow"
-                    actions={[
-                      <EditOutlined 
-                        key="edit" 
-                        onClick={() => handleEditTask(task)}
-                      />,
-                      <DeleteOutlined 
-                        key="delete" 
-                        onClick={() => handleDeleteTask(task.id)}
-                      />,
-                    ]}
-                  >
-                    <div className="space-y-2">
-                      <div className="font-medium">{task.title}</div>
-                      
-                      {task.description && (
-                        <div className="text-sm text-gray-600 line-clamp-2">
-                          {task.description}
-                        </div>
-                      )}
-                      
-                      <div className="flex items-center justify-between">
-                        <span className={`px-2 py-1 rounded-full text-xs ${priorityColors[task.priority]}`}>
-                          {task.priority}
-                        </span>
-                        
-                        {task.assignees && task.assignees.length > 0 && (
-                          <div className="flex items-center space-x-1">
-                            <UserOutlined className="text-gray-400" />
-                            <span className="text-xs text-gray-500">
-                              {task.assignees.length}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                      
-                      {task.dueDate && (
-                        <div className="text-xs text-gray-500">
-                          До: {dayjs(task.dueDate).format('DD.MM.YYYY')}
-                        </div>
-                      )}
-                    </div>
-                  </Card>
-                ))}
-                
-                {tasksByStatus[status].length === 0 && (
-                  <div className="text-center text-gray-500 py-8">
-                    Нет задач
+      {/* Канбан доска с DragAndDrop */}
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+      >
+        <Row gutter={[16, 16]}>
+          {Object.values(TaskStatus).map((status) => (
+            <Col xs={24} sm={12} lg={6} key={status}>
+              <Card 
+                title={
+                  <div className="flex items-center justify-between">
+                    <span>{statusLabels[status]}</span>
+                    <span className="text-sm text-gray-500">
+                      {tasksByStatus[status].length}
+                    </span>
                   </div>
-                )}
-              </div>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+                }
+                className="h-full"
+              >
+                <SortableContext
+                  id={`status-${status}`}
+                  items={tasksByStatus[status].map(task => task.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  <div className="space-y-3 min-h-[400px]">
+                    {tasksByStatus[status].map((task) => (
+                      <DraggableTask
+                        key={task.id}
+                        task={task}
+                        onEdit={handleEditTask}
+                        onDelete={handleDeleteTask}
+                        priorityColors={priorityColors}
+                      />
+                    ))}
+                    
+                    {tasksByStatus[status].length === 0 && (
+                      <div className="text-center text-gray-500 py-8">
+                        Нет задач
+                      </div>
+                    )}
+                  </div>
+                </SortableContext>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+        {/* DragOverlay для отображения перетаскиваемой задачи */}
+        <DragOverlay>
+          {activeTask ? (
+            <div className="opacity-50">
+              <Card
+                size="small"
+                className="cursor-pointer hover:shadow-md transition-shadow"
+              >
+                <div className="space-y-2">
+                  <div className="font-medium">{activeTask.title}</div>
+                  
+                  {activeTask.description && (
+                    <div className="text-sm text-gray-600 line-clamp-2">
+                      {activeTask.description}
+                    </div>
+                  )}
+                  
+                  <div className="flex items-center justify-between">
+                    <span className={`px-2 py-1 rounded-full text-xs ${priorityColors[activeTask.priority]}`}>
+                      {activeTask.priority}
+                    </span>
+                    
+                    {activeTask.assignees && activeTask.assignees.length > 0 && (
+                      <div className="flex items-center space-x-1">
+                        <UserOutlined className="text-gray-400" />
+                        <span className="text-xs text-gray-500">
+                          {activeTask.assignees.length}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {activeTask.dueDate && (
+                    <div className="text-xs text-gray-500">
+                      До: {dayjs(activeTask.dueDate).format('DD.MM.YYYY')}
+                    </div>
+                  )}
+                </div>
+              </Card>
+            </div>
+          ) : null}
+        </DragOverlay>
+      </DndContext>
 
       {/* Модальное окно для создания/редактирования задачи */}
       <Modal
