@@ -9,4 +9,5 @@ public class CreateTaskDto
     public DateTime? DueTime { get; set; }
     public Guid ProjectId { get; set; }
     public Guid? AssigneeId { get; set; }
+    public Guid CreatorId { get; set; } // Добавляем обязательное поле создателя
 }

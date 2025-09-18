@@ -25,6 +25,12 @@ public class UserRepository : IUserRepository
             .Include(c => c.Projects)
             .ToListAsync();
 
+    public async Task AddAsync(UserEntity user)
+    {
+        await _dbContext.AddAsync(user);
+        await _dbContext.SaveChangesAsync();
+    }
+
     public async Task AddAsync(Guid id, string userName, string passwordHash, string fullName)
     {
         var userEntity = new UserEntity()
@@ -38,6 +44,23 @@ public class UserRepository : IUserRepository
         await _dbContext.AddAsync(userEntity);
         await _dbContext.SaveChangesAsync();
     }
+
+    public async Task UpdateAsync(Guid id, string? userName, string? email, string? passwordHash)
+    {
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+        if (user != null)
+        {
+            if (!string.IsNullOrEmpty(userName))
+                user.UserName = userName;
+            if (!string.IsNullOrEmpty(email))
+                user.Email = email;
+            if (!string.IsNullOrEmpty(passwordHash))
+                user.PasswordHash = passwordHash;
+            
+            await _dbContext.SaveChangesAsync();
+        }
+    }
+
     public async Task UpdateUserNameAsync(Guid id, string userName)
     {
         await _dbContext.Users
@@ -45,6 +68,7 @@ public class UserRepository : IUserRepository
             .ExecuteUpdateAsync(s => s.
                 SetProperty(c => c.UserName, userName));
     }
+
     public async Task UpdatePasswordAsync(Guid id, string passwordHash)
     {
         await _dbContext.Users
@@ -63,4 +87,47 @@ public class UserRepository : IUserRepository
         }
     }
 
+    public async Task<List<TaskEntity>> GetUserTasksAsync(Guid userId)
+    {
+        return await _dbContext.Tasks
+            .AsNoTracking()
+            .Where(t => t.CreatorId == userId || t.AssigneeId == userId)
+            .ToListAsync();
+    }
+
+    public async Task<List<ProjectEntity>> GetUserProjectsAsync(Guid userId)
+    {
+        return await _dbContext.Projects
+            .AsNoTracking()
+            .Where(p => p.Users.Any(u => u.Id == userId))
+            .ToListAsync();
+    }
+
+    public async Task<List<TaskEntity>> GetUserCreatedTasksAsync(Guid userId)
+    {
+        return await _dbContext.Tasks
+            .AsNoTracking()
+            .Where(t => t.CreatorId == userId)
+            .ToListAsync();
+    }
+
+    public async Task<List<TaskEntity>> GetUserAssignedTasksAsync(Guid userId)
+    {
+        return await _dbContext.Tasks
+            .AsNoTracking()
+            .Where(t => t.AssigneeId == userId)
+            .ToListAsync();
+    }
+
+    public async Task<bool> IsEmailExistsAsync(string email)
+    {
+        return await _dbContext.Users
+            .AnyAsync(u => u.Email == email);
+    }
+
+    public async Task<bool> IsUserNameExistsAsync(string userName)
+    {
+        return await _dbContext.Users
+            .AnyAsync(u => u.UserName == userName);
+    }
 }

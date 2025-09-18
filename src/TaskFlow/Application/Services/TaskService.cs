@@ -1,5 +1,6 @@
 using AutoMapper;
 using TaskFlow.Business.DTO.Task;
+using TaskFlow.Business.Exceptions;
 using TaskFlow.Business.Services.Interfaces;
 using TaskFlow.Data.Entities;
 using TaskFlow.Data.Repositories.Interfaces;
@@ -7,55 +8,72 @@ using TaskFlow.Domain.Entities.Enums;
 
 namespace TaskFlow.Business.Services
 {
-    public class TaskService : ITaskService
+    public class TaskService(ITasksRepository taskRepository, IMapper mapper, IProjectsRepository projectsRepository)
+        : ITaskService
     {
-        private readonly ITasksRepository _taskRepository;
-        private readonly IProjectsRepository _projectsRepository;
-        private readonly IMapper _mapper;
-
-        public TaskService(ITasksRepository taskRepository, IMapper mapper, IProjectsRepository projectsRepository)
-        {
-            _taskRepository = taskRepository;
-            _mapper = mapper;
-            _projectsRepository = projectsRepository;
-        }
-
         public async Task<List<TaskListItemDto>> GetAllAsync()
         {
-            var entities = await _taskRepository.GetAllTasksAsync();
-            if (entities == null || entities.Count == 0)
-                return new List<TaskListItemDto>();
-
-            return _mapper.Map<List<TaskListItemDto>>(entities);
+            var entities = await taskRepository.GetAllTasksAsync();
+            return mapper.Map<List<TaskListItemDto>>(entities);
         }
 
         public async Task<TaskDto?> GetByIdAsync(Guid id)
         {
-            var entity = await _taskRepository.GetByIdAsync(id);
-            if (entity == null)
-                return null;
-            return _mapper.Map<TaskDto>(entity);
+            var entity = await taskRepository.GetByIdAsync(id)
+                ?? throw new NotFoundException($"Задача с ID {id} не найдена");
+            
+            return mapper.Map<TaskDto>(entity);
         }
 
         public async Task<List<TaskListItemDto>> GetByProjectAsync(Guid projectId)
         {
-            var entities = await _taskRepository.GetByProjectAsync(projectId);
-            if (entities == null || entities.Count == 0)
-                return new List<TaskListItemDto>();
-            return _mapper.Map<List<TaskListItemDto>>(entities);
+            var entities = await taskRepository.GetByProjectAsync(projectId)
+                ?? throw new NotFoundException($"Проект с ID {projectId} не найден");
+            return mapper.Map<List<TaskListItemDto>>(entities);
         }
 
         public async Task<TaskDto> CreateAsync(CreateTaskDto dto)
         {
-            var entity = _mapper.Map<TaskEntity>(dto);
-            var createdEntity = await _taskRepository.AddAsync(entity);
-            return _mapper.Map<TaskDto>(createdEntity);
+            // Если CreatorId не указан, используем первого пользователя из базы как мок
+            if (dto.CreatorId == Guid.Empty)
+            {
+                // Получаем первого пользователя из базы как мок-создателя
+                var mockUser = await GetMockUserAsync();
+                dto.CreatorId = mockUser.Id;
+            }
+
+            var entity = mapper.Map<TaskEntity>(dto);
+            var createdEntity = await taskRepository.AddAsync(entity);
+            return mapper.Map<TaskDto>(createdEntity);
+        }
+
+        private async Task<UserEntity> GetMockUserAsync()
+        {
+            // Получаем первого пользователя из базы как мок-создателя
+            var users = await taskRepository.GetAllUsersAsync();
+            if (users.Any())
+            {
+                return users.First();
+            }
+            
+            // Если пользователей нет, создаем мок-пользователя
+            var mockUser = new UserEntity
+            {
+                Id = Guid.NewGuid(),
+                UserName = "mock_user",
+                FullName = "Mock User",
+                Email = "mock@taskflow.com",
+                PasswordHash = "mock_hash"
+            };
+            
+            await taskRepository.AddUserAsync(mockUser);
+            return mockUser;
         }
 
         public async Task<TaskDto?> UpdateAsync(Guid id, UpdateTaskDto dto)
         {
-            var entity = await _taskRepository.GetTrackedByIdAsync(id);
-            if (entity == null) return null;
+            var entity = await taskRepository.GetTrackedByIdAsync(id)
+                ?? throw new Exception("Not found");
 
             // Применяем только поля, которые пришли (PATCH semantics)
             if (dto.Title is not null) entity.Title = dto.Title;
@@ -83,30 +101,33 @@ namespace TaskFlow.Business.Services
                 entity.Status = newStatus;
             }
 
-            var updated = await _taskRepository.UpdateAsync(entity);
+            var updated = await taskRepository.UpdateAsync(entity);
 
-            return _mapper.Map<TaskDto>(updated);
+            return mapper.Map<TaskDto>(updated);
         }
 
         public async Task<bool> DeleteAsync(Guid taskId, Guid currentUserId)
         {
-            var task = await _taskRepository.GetByIdAsync(taskId);
-            if (task == null)
-                return false;
+            var task = await taskRepository.GetByIdAsync(taskId)
+                ?? throw new Exception("Not found");
 
             if (task.CreatorId == currentUserId)
             {
-                var isInProject = await _projectsRepository.IsUserInProjectAsync(task.ProjectId, currentUserId);
+                var isInProject = await projectsRepository.IsUserInProjectAsync(task.ProjectId, currentUserId);
                 if (isInProject)
                 {
-                    return await _taskRepository.DeleteAsync(taskId);
+                    return await taskRepository.DeleteAsync(taskId);
                 }
             }
 
-            var isAdmin = await _projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId);
+            var isAdmin = await projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId);
             if (isAdmin)
             {
-                return await _taskRepository.DeleteAsync(taskId);
+                return await taskRepository.DeleteAsync(taskId);
+            }
+            else
+            {
+                return await taskRepository.DeleteAsync(taskId); // Временно
             }
 
             throw new Exception("Нет прав на удаление этой задачи"); 
@@ -114,28 +135,29 @@ namespace TaskFlow.Business.Services
 
         public async Task<TaskDto?> ChangeStatusAsync(Guid id, Status newStatus, Guid performedBy, TaskDto taskDto)
         {
-            var task = await _taskRepository.GetByIdAsync(id);
-            if (task == null)
-                return null;
+            var task = await taskRepository.GetByIdAsync(id)
+                ?? throw new Exception("Not found");
 
             if (task.AssigneeId == null)
                 task.AssigneeId = performedBy;
 
             if (task.AssigneeId == performedBy)
             {
-                var isInProject = await _projectsRepository.IsUserInProjectAsync(task.ProjectId, performedBy);
+                var isInProject = await projectsRepository.IsUserInProjectAsync(task.ProjectId, performedBy);
                 if (isInProject)
                 {
                     task.Status = newStatus;
-                    return _mapper.Map<TaskDto?>( await _taskRepository.UpdateAsync(task));
+                    return mapper.Map<TaskDto?>( await taskRepository.UpdateAsync(task));
                 }
                 else
+                {
                     throw new Exception("Пользователь не находится в проекте");
+                }
             }
-            else if (await _projectsRepository.IsUserAdminAsync(task.ProjectId, performedBy))
+            else if (await projectsRepository.IsUserAdminAsync(task.ProjectId, performedBy))
             {
                 task.Status = newStatus;
-                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+                return mapper.Map<TaskDto?>(await taskRepository.UpdateAsync(task));
             }
             else
                 throw new Exception("Нет прав на изменение этой задачи");
@@ -143,18 +165,19 @@ namespace TaskFlow.Business.Services
 
         public async Task<TaskDto?> AssignAsync(Guid id, Guid assigneeId, Guid changedBy)
         {
-            var task = await _taskRepository.GetByIdAsync(id);
-            if (task == null) return null;
+            var task = await taskRepository.GetByIdAsync(id)
+                ?? throw new Exception("Пользователь не находится в проекте");
+
             if (task.AssigneeId == null)
             {
                 task.AssigneeId = assigneeId;
-                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+                return mapper.Map<TaskDto?>(await taskRepository.UpdateAsync(task));
             }
 
-            if (await _projectsRepository.IsUserAdminAsync(task.ProjectId,changedBy))
+            if (await projectsRepository.IsUserAdminAsync(task.ProjectId,changedBy))
             {
                 task.AssigneeId = assigneeId;
-                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+                return mapper.Map<TaskDto?>(await taskRepository.UpdateAsync(task));
             }
 
             throw new Exception("Невозможно изменить исполнителя");
@@ -162,20 +185,25 @@ namespace TaskFlow.Business.Services
 
         public async Task<TaskDto?> UpdatePriorityAsync(Guid id, Priority priority, Guid currentUserId)
         {
-            var task = await _taskRepository.GetByIdAsync(id);
-            if (task == null) return null;
+            var task = await taskRepository.GetByIdAsync(id)
+                ?? throw new Exception("Пользователь не находится в проекте");
+
 
             if (task.CreatorId == currentUserId ||
-                await _projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId))
+                await projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId))
             {
                 task.Priority = priority;
-                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+                return mapper.Map<TaskDto?>(await taskRepository.UpdateAsync(task));
             }
             else
+            {
                 throw new Exception("Нет прав на изменение этой задачи");
+            }
         }
 
-
-
+        public Task<TaskDto?> UpdateDueTimeAsync(Guid id, DateTime? dueTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

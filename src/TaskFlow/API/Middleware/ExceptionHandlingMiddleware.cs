@@ -1,5 +1,6 @@
 using System.Net;
 using System.Text.Json;
+using TaskFlow.Business.Exceptions;
 
 namespace API.Middleware;
 
@@ -42,6 +43,13 @@ public class ExceptionHandlingMiddleware
 
         switch (exception)
         {
+            case NotFoundException:
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                break;
+            case ForbiddenException:
+                context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+                break;
+            case BadRequestException:
             case ArgumentException:
                 context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 break;

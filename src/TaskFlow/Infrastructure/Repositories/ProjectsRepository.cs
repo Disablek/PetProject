@@ -79,7 +79,80 @@ public class ProjectsRepository : IProjectsRepository
             _dbContext.Projects.Remove(project); 
             await _dbContext.SaveChangesAsync(); 
         }
+    }
 
+    public async Task<List<TaskEntity>> GetProjectTasksAsync(Guid projectId)
+    {
+        return await _dbContext.Tasks
+            .AsNoTracking()
+            .Where(t => t.ProjectId == projectId)
+            .ToListAsync();
+    }
+
+    public async Task<List<UserEntity>> GetProjectUsersAsync(Guid projectId)
+    {
+        return await _dbContext.Projects
+            .AsNoTracking()
+            .Where(p => p.Id == projectId)
+            .SelectMany(p => p.Users)
+            .ToListAsync();
+    }
+
+    public async Task AddUserToProjectAsync(Guid projectId, Guid userId)
+    {
+        var project = await _dbContext.Projects
+            .Include(p => p.Users)
+            .FirstOrDefaultAsync(p => p.Id == projectId);
+        
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        
+        if (project != null && user != null && !project.Users.Any(u => u.Id == userId))
+        {
+            project.Users.Add(user);
+            await _dbContext.SaveChangesAsync();
+        }
+    }
+
+    public async Task RemoveUserFromProjectAsync(Guid projectId, Guid userId)
+    {
+        var project = await _dbContext.Projects
+            .Include(p => p.Users)
+            .FirstOrDefaultAsync(p => p.Id == projectId);
+        
+        if (project != null)
+        {
+            var user = project.Users.FirstOrDefault(u => u.Id == userId);
+            if (user != null)
+            {
+                project.Users.Remove(user);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+    }
+
+    public async Task UpdateProjectUsersAsync(Guid projectId, List<Guid> userIds)
+    {
+        var project = await _dbContext.Projects
+            .Include(p => p.Users)
+            .FirstOrDefaultAsync(p => p.Id == projectId);
+        
+        if (project != null)
+        {
+            // Очищаем текущих пользователей
+            project.Users.Clear();
+            
+            // Добавляем новых пользователей
+            var users = await _dbContext.Users
+                .Where(u => userIds.Contains(u.Id))
+                .ToListAsync();
+            
+            foreach (var user in users)
+            {
+                project.Users.Add(user);
+            }
+            
+            await _dbContext.SaveChangesAsync();
+        }
     }
 
 

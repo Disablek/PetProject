@@ -70,4 +70,16 @@ public class TasksRepository : ITasksRepository
         var affected = await _dbContext.Tasks.Where(t => t.Id == id).ExecuteDeleteAsync();
         return affected > 0;
     }
+
+    // Методы для работы с пользователями (для мок-логики)
+    public async Task<List<UserEntity>> GetAllUsersAsync()
+    {
+        return await _dbContext.Users.AsNoTracking().ToListAsync();
+    }
+
+    public async Task AddUserAsync(UserEntity user)
+    {
+        await _dbContext.Users.AddAsync(user);
+        await _dbContext.SaveChangesAsync();
+    }
 }

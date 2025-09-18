@@ -12,5 +12,10 @@ public interface IProjectsRepository
     Task DeleteAsync(Guid id);
     Task<bool> IsUserInProjectAsync(Guid projectId, Guid userId);
     Task<bool> IsUserAdminAsync(Guid projectId, Guid userId);
+    Task<List<TaskEntity>> GetProjectTasksAsync(Guid projectId);
+    Task<List<UserEntity>> GetProjectUsersAsync(Guid projectId);
+    Task AddUserToProjectAsync(Guid projectId, Guid userId);
+    Task RemoveUserFromProjectAsync(Guid projectId, Guid userId);
+    Task UpdateProjectUsersAsync(Guid projectId, List<Guid> userIds);
 }
 
