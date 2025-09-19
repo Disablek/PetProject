@@ -7,6 +7,38 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+**/bin/
+**/obj/
+
+API/bin/
+API/obj/
+Application/bin/
+Application/obj/
+Domain/bin/
+Domain/obj/
+Infrastructure/bin/
+Infrastructure/obj/
+
+# Файлы пакетов NuGet
+**/packages/
+*.nuget.props
+*.nuget.targets
+
+# Файлы Rider
+.idea/
+*.sln.iml
+
+# Файлы VS Code
+.vscode/
+
+# Файлы сборки
+*.cache
+*.built
+*.build
+*.msi
+*.msm
+*.msp
+
 # User-specific files
 *.rsuser
 *.suo

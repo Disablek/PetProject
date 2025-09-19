@@ -112,7 +112,7 @@ namespace TaskFlow.Business.Services
             throw new Exception("Нет прав на удаление этой задачи"); 
         }
 
-        public async Task<TaskDto?> ChangeStatusAsync(Guid id, Status newStatus, Guid performedBy, TaskDto taskDto)
+        public async Task<TaskDto?> ChangeStatusAsync(Guid id, Status newStatus, Guid performedBy)
         {
             var task = await _taskRepository.GetByIdAsync(id);
             if (task == null)
@@ -173,6 +173,23 @@ namespace TaskFlow.Business.Services
             }
             else
                 throw new Exception("Нет прав на изменение этой задачи");
+        }
+
+        public async Task<TaskDto?> UpdateDueTimeAsync(Guid id, DateTime? dueTime, Guid currentUserId)
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null) return null;
+
+            if (task.CreatorId == currentUserId ||
+                await _projectsRepository.IsUserAdminAsync(task.ProjectId, currentUserId))
+            {
+                task.DueTime = dueTime;
+                return _mapper.Map<TaskDto?>(await _taskRepository.UpdateAsync(task));
+            }
+            else
+            {
+                throw new Exception("Нет прав на изменение этой задачи");
+            }
         }
 
 
