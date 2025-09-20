@@ -142,6 +142,7 @@ namespace TaskFlow.Data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FullName")
@@ -160,6 +161,9 @@ namespace TaskFlow.Data.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("UserName")
                         .IsUnique();

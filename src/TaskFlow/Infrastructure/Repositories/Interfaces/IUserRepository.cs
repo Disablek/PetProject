@@ -19,4 +19,6 @@ public interface IUserRepository
     Task<List<TaskEntity>> GetUserAssignedTasksAsync(Guid userId);
     Task<bool> IsEmailExistsAsync(string email);
     Task<bool> IsUserNameExistsAsync(string userName);
+    Task<UserEntity?> GetFirstUserAsync();
+    Task<UserEntity?> GetAdminUserAsync();
 }

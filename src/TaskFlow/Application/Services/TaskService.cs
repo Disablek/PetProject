@@ -34,10 +34,8 @@ namespace TaskFlow.Business.Services
 
         public async Task<TaskDto> CreateAsync(CreateTaskDto dto)
         {
-            // Если CreatorId не указан, используем первого пользователя из базы как мок
             if (dto.CreatorId == Guid.Empty)
             {
-                // Получаем первого пользователя из базы как мок-создателя
                 var mockUser = await GetMockUserAsync();
                 dto.CreatorId = mockUser.Id;
             }

@@ -31,6 +31,13 @@ namespace TaskFlow.Business.Services
             var entity = mapper.Map<ProjectEntity>(dto);
             entity.Id = Guid.NewGuid();
             
+            // Если AdminId не указан, используем администратора по умолчанию
+            if (entity.AdminId == Guid.Empty || entity.AdminId == null)
+            {
+                var defaultAdmin = await userRepository.GetAdminUserAsync() ?? await userRepository.GetFirstUserAsync();
+                entity.AdminId = defaultAdmin?.Id ?? Guid.Empty;
+            }
+            
             await projectRepository.AddAsync(entity.Id, entity.AdminId, entity.Name, entity.Description);
             
             // Добавляем пользователей в проект если они указаны

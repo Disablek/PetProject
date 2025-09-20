@@ -130,4 +130,18 @@ public class UserRepository : IUserRepository
         return await _dbContext.Users
             .AnyAsync(u => u.UserName == userName);
     }
+
+    public async Task<UserEntity?> GetFirstUserAsync()
+    {
+        return await _dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<UserEntity?> GetAdminUserAsync()
+    {
+        return await _dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.UserName == "admin");
+    }
 }
